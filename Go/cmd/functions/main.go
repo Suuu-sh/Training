@@ -13,6 +13,7 @@ import (
 // - defer: 関数終了時に後処理を実行する。
 // - エラー判定: if err != nil { ... }
 // - エラーwrap: fmt.Errorf("文脈: %w", err)
+
 // main は run の実行結果を受け取り、エラーがあれば表示する。
 func main() {
 	// run を実行して、処理全体のエラーを受け取る。
@@ -57,22 +58,6 @@ func parseTwoInts(args []string) (int, int, error) {
 	if len(args) < 3 {
 		// 使い方が分かるエラーを返す。
 		return 0, 0, errors.New("usage: go run ./cmd/functions <left> <right>")
-  package main
-  package main
-
-  func main() {
-
-        var height float64 = 170.5
-        name := "Youta"
-        fmt.Println("app:", appName)
-        fmt.Println("name:", name, "age:", age)
-        fmt.Println("height:", height, "isInfraEngineer:",isInfraEngineer)
-
-        fmt.Printf("type(name)=%T\n", name)
-        fmt.Printf("type(height)=%T\n", height)
-        fmt.Printf("type(isInfraEngineer)=%T\n", isInfraEngineer)
-  }
-
 	}
 
 	// 1 つ目の値を文字列から整数へ変換する。

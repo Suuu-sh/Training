@@ -1,6 +1,6 @@
 # Go Syntax Summary
 
-最終更新: 2026-02-11
+最終更新: 2026-02-12
 
 ## このファイルの目的
 - ロードマップで完了した項目ごとに、実際に使ったGo文法を記録する。
@@ -101,7 +101,28 @@
 
 ---
 
-## 6) 先取りで使った文法（補足）
+## 6) 構造体・メソッド（完了）
+主な実装: `cmd/structs/main.go`
+
+- 構造体定義
+  - `type Profile struct { Name string; Years int }`
+- 構造体リテラルで初期化
+  - `profile := Profile{Name: "Youta", Years: 30}`
+- メソッド定義（値レシーバ）
+  - `func (p Profile) Intro() string`
+  - `func (p Profile) RenameByValue(newName string)`
+- メソッド定義（ポインタレシーバ）
+  - `func (p *Profile) RenameByPointer(newName string)`
+  - `func (p *Profile) AddYear()`
+- 挙動の違い
+  - 値レシーバはコピー側のみ変更され、元データは変わらない。
+  - ポインタレシーバは元データを変更できる。
+- `nil` ガード
+  - `if p == nil { return }`
+
+---
+
+## 7) 先取りで使った文法（補足）
 主な実装: `cmd/hello/main.go`, `internal/greet/*`
 
 - package/import
@@ -117,4 +138,4 @@
 ---
 
 ## 次回更新予定
-- `構造体・メソッド` を完了したら、`struct` 定義とメソッド定義を追記する。
+- `インターフェースの基本` を完了したら、`interface` 定義と実装の紐づけを追記する。
